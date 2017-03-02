@@ -1,2 +1,2 @@
-# miraclepills
+# Miracle Pills
 iOS dev course
