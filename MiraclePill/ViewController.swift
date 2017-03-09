@@ -12,6 +12,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickerBtn: UIButton!
+    @IBOutlet weak var buyBtn: UIButton!
+    @IBAction func buyBtnClick(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var Country: UILabel!
+    @IBOutlet weak var countryText: UITextField!
+    @IBOutlet weak var zipcode: UILabel!
+    @IBOutlet weak var zipcodeText: UITextField!
+    
     
     let states = ["Alaska", "Alabama", "Arkansas", "American Samoa", "Arizona", "California", "Colorado", "Connecticut", "District of Columbia", "Delaware", "Florida", "Georgia", "Guam", "Hawaii", "Iowa", "Idaho", "Illinois", "Indiana", "Kansas", "Kentucky", "Louisiana", "Massachusetts", "Maryland", "Maine", "Michigan", "Minnesota", "Missouri", "Mississippi","Montana", "North Carolina","North Dakota", "Nebraska", "New Hampshire", "New Jersey", "New Mexico", "Nevada", "New York", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Virginia", "Vermont", "Washington", "Wisconsin", "West Virginia", "Wyoming"]
     
@@ -31,6 +40,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func stateBtnPressed(_ sender: Any) {
         
         statePicker.isHidden = false
+        Country.isHidden = true
+        countryText.isHidden = true
+        zipcode.isHidden = true
+        zipcodeText.isHidden = true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -48,6 +61,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         statePickerBtn.setTitle(states[row], for: UIControlState.normal)
         statePicker.isHidden = true
+        Country.isHidden = false
+        countryText.isHidden = false
+        zipcode.isHidden = false
+        zipcodeText.isHidden = false
+        
     }
 }
 
